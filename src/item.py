@@ -48,9 +48,9 @@ class Item:
     @classmethod
     def instantiate_from_csv(cls, file_name):
         n_dir, n_file = file_name.split('/')
-        file_name = os.path.join('..', n_dir, n_file)
+        file_name_os = os.path.join('..', n_dir, n_file)
         try:
-            with open(file_name, "r") as file:
+            with open(file_name_os, "r") as file:
                 reader = csv.DictReader(file)
                 for line in reader:
                     name_ = line['name']
